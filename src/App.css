@@ -1,38 +1,42 @@
+body {
+  font-family: "DotGothic16", sans-serif;
+  font-family: "Uchen", serif;
+
+}
+
+.container {
+  max-width: 60%;
+
+}
+
 .App {
-  text-align: center;
+  margin: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.btn-info {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  color: rgb(241, 231, 231);
+  box-shadow: 5px 5px 10px #bebaba;
+  transition: ease-in-out 200ms;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+li {
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.temperature {
+  font-size: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: 35px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todaytemp {
+  font-size: 25px;
+}
+
+footer {
+  font-size: 12px
 }
