@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
 import axios from "axios";
-
 import "./App.css";
 
 export default function Weather(props) {
@@ -14,30 +13,27 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      iconUrl: response.data.weather[0].icon,
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
       city: response.data.name,
     });
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-    search();
-  }
   function handleCityChange(event) {
     setCity(event.target.value);
   }
 
-  function search() {
+  function handleSearch(event) {
+    event.preventDefault();
     const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSearch}>
           <div className="row">
             <div className="col-6">
               <input
@@ -62,7 +58,10 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    search();
+    const apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+    let city = "lisbon";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
     return "Loading...";
   }
 }

@@ -1,15 +1,15 @@
-import { StrictMode } from "react";
+import React from "react";
 import { createRoot } from "react-dom/client";
-
-import App from "./App";
+import Weather from "./Weather";
 
 import "./App.css";
-
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
-
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+function App() {
+  return (
+    <div className="App">
+      <Weather defaultCity="london" />
+    </div>
+  );
+}
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<App />);
