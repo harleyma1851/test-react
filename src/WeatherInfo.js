@@ -13,7 +13,7 @@ export default function WeatherInfo(props) {
       <div className="row">
         <div className="col-6">
           <ul>
-            <li id="current-temp">
+            <li className="current-temp">
               {Math.round(props.data.temperature)}{" "}
               <a href="/" id="celsius-link">
                 °C
