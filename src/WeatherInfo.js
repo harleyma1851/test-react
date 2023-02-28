@@ -17,8 +17,7 @@ export default function WeatherInfo(props) {
               {Math.round(props.data.temperature)}{" "}
               <a href="/" id="celsius-link">
                 °C
-              </a>
-              {" | "}
+              </a>{" "}
               <a href="/" id="fahrenheit-link">
                 °F
               </a>

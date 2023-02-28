@@ -1,12 +1,21 @@
 body {
   font-family: "DotGothic16", sans-serif;
   font-family: "Uchen", serif;
-
+  background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
+
+a {
+  text-decoration: none;
+  color: rgb(85, 83, 83);
+  font-size: small;
+}
+
+
 
 .App {
   max-width: 576px;
   margin: 30px auto;
+
 
 }
 
